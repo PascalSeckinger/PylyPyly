@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Python codemirror & skulpt</title>
+    <script src="../libs/codemirror/codemirror.js"></script>
+    <link href="../libs/codemirror/codemirror.css" rel="stylesheet">
+    <script src="../libs/codemirror/python.js"></script>
+    <link href="../libs/codemirror/eclipse.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/skulptStyle.css">
+    <script src="../libs/skulpt/skulpt.min.js" type="text/javascript"></script>
+    <script src="../libs/skulpt/skulpt-stdlib.js" type="text/javascript"></script>
+    <script src="../js/myskulpt.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+<div class="row">
+<div  class="column editor"><textarea id="code" name="code">
+print("Hello World!")
+</textarea></div>
+      <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+          mode: {name: "python",
+                 version: 3,
+                 singleLineStringErrors: false},
+          lineNumbers: true,
+          indentUnit: 4,
+          matchBrackets: true,
+          theme: "eclipse"
+      });
+      </script>
+      <div class="column output"><pre id="output" ></pre></div>
+      </div>
+      <button class="button run" id="run_button" onclick="runit()">Run</button>
+
+  </body>
+
+</html>
