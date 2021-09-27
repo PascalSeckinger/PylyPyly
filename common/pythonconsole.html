@@ -2,21 +2,26 @@
 <html>
   <head>
     <title>Python codemirror & skulpt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <script src="../libs/codemirror/codemirror.js"></script>
     <link href="../libs/codemirror/codemirror.css" rel="stylesheet">
     <script src="../libs/codemirror/python.js"></script>
     <link href="../libs/codemirror/eclipse.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/skulptStyle.css">
+
     <script src="../libs/skulpt/skulpt.min.js" type="text/javascript"></script>
     <script src="../libs/skulpt/skulpt-stdlib.js" type="text/javascript"></script>
+
     <script src="../js/myskulpt.js" type="text/javascript"></script>
+    <script src="../js/mysplitter.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/consoleStyle.css">
   </head>
 
   <body>
-<div class="row">
-<div  class="column editor"><textarea id="code" name="code">
+<div class="container">
+<div  class="container__left"><textarea id="code" name="code">
 print("Hello World!")
-</textarea></div>
+</textarea>
       <script>
         var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
           mode: {name: "python",
@@ -27,8 +32,11 @@ print("Hello World!")
           matchBrackets: true,
           theme: "eclipse"
       });
+      editor.setSize("100%",);
       </script>
-      <div class="column output"><pre id="output" ></pre></div>
+      </div>
+      <div class="resizer" id="dragMe"></div>
+      <div class="container__right"><pre id="output" ></pre></div>
       </div>
       <button class="button run" id="run_button" onclick="runit()">Run</button>
 

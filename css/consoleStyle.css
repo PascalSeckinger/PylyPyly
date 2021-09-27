@@ -1,0 +1,58 @@
+.button {
+  border: none;
+  color: black;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+	font-weight: bold;
+  cursor: pointer;
+	outline: none;
+}
+
+.run {
+	background-color: #9BC01C;
+}
+
+.run:hover {
+  filter: brightness(110%);
+}
+
+.container {
+		display: flex;
+
+		/* Misc */
+		border: 1px solid #cbd5e0;
+		height: auto;
+		width: 100%;
+}
+.container__left {
+		/* Initially, the left takes 3/4 width */
+		width: 75%;
+
+		/* Misc */
+		display: flex;
+}
+.resizer {
+		background-color: #cbd5e0;
+		cursor: ew-resize;
+		height: inherit;
+		width: 5px;
+}
+.container__right {
+		/* Take the remaining width */
+		flex: 1;
+
+		/* Misc */
+		display: flex;
+		overflow:hidden;
+		border: 1px solid black;
+		padding-left: 10px;
+}
+
+.CodeMirror {
+	border-top: 1px solid black;
+	border: 1px solid black;
+	background-color:#f4f0ec
+}
