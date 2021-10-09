@@ -6,318 +6,556 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cours et exercices de Terminale NSI</title>
     <meta name="description" content="Cours et exercices de Terminale NSI">
-    <link rel="stylesheet" href="css/mainStyles.css">
-    <link rel="stylesheet" href="css/levelStyles.css">
+    <link rel="stylesheet" href="css/tnsi.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </head>
 
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="chevron-right" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </symbol>
+  </svg>
+
 	<header>
     <div id="header">
       <!--common/navbar.html-->
     </div>
 	</header>
 
-  <!-- Page Content -->
-  <section id="pageTitle">
+  <!-- <section id="pageTitle">
     Terminale NSI
-  </section>
-      <!-- chapitre -->
-  <section id="chapitres">
-    <div class="row">
-      <div class="column programme">
-        <a href="ressources/tnsi/programme.pdf" style="float:left">programme officiel</a>
-        <a href="ressources/tnsi/progression.pdf" style="float:right">proposition de progression</a>
+  </section> -->
+  <div class="container px-4 py-5" id="page content">
+    <h2 class="p-2 mb-4 border-bottom">Programme</h2>
+    <div class="row align-items-start">
+      <div class="col text-center">
+        <a href="ressources/tnsi/programme.pdf" class="icon-link">
+          Programme officiel
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+      <div class="col text-center">
+        <a href="ressources/tnsi/progression.pdf" class="icon-link">
+          Proposition de progression
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+        </a>
       </div>
     </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column theme-title">
-        <h4>Structures de données linéaires et dictionnaire</h4>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Programmation objet</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/programmation_objet/programmation_objet_slides.pdf" style="float:left">Slides</a>
-          <a href="ressources/tnsi/programmation_objet/programmation_objet.pdf" style="float:center">Cours</a>
-          <a href="ressources/tnsi/programmation_objet/programmation_objet_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Dictionnaires</h4>
-        </div>
-        <div class="chapter-content">
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Listes chaînées</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/liste_chainee/liste_chainee_slides.pdf" style="float:left">Slides</a>
-          <a href="ressources/tnsi/liste_chainee/liste_chainee.pdf" style="float:center">Cours</a>
-          <a href="ressources/tnsi/liste_chainee/liste_chainee_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Piles et Files</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/piles_files/piles_files_slides.pdf" style="float:left">Slides</a>
-          <a href="ressources/tnsi/piles_files/piles_files.pdf" style="float:center">Cours</a>
-          <a href="ressources/tnsi/piles_files/piles_files_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column theme-title">
-        <h4>Arbres et Graphes</h4>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Arbres et algorithmes sur les arbres</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/arbres/arbres.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/arbres/arbres_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Arbres binaires</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/arbres/arbres_binaires.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/arbres/arbres_binaires_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Graphes et algorithmes sur les graphes</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/graphes/graphes.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/graphes/graphes_exercices.pdf" style="float:center">Exercices</a>
-          <a href="ressources/tnsi/graphes/graphes_algorithmes_exercices.pdf" style="float:right">Algorithmes</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Algorithme de Dijkstra</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/graphes/beamer_dijkstra.pdf" style="float:left">Slides</a>
-          <a href="ressources/tnsi/graphes/dijkstra.zip" style="float:center" download>Notebook</a>
-          <a href="ressources/tnsi/graphes/dijkstra_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column theme-title">
-        <h4>Bases de données</h4>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Modèle relationnel</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/modele_relationnel/modele_relationnel_slides.pdf" style="float:left">Slides</a>
-          <a href="ressources/tnsi/modele_relationnel/modele_relationnel_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Base de données relationnelles</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/bases_de_donnees_relationnelles/bases_de_donnees_relationnelles.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/bases_de_donnees_relationnelles/bases_de_donnees_relationnelles_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Requêtes SQL</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/SQL/SQL.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/SQL/base_de_donnees_CDI.zip" style="float:center">BBD sqlite</a>
-          <a href="ressources/tnsi/SQL/SQL_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Système de gestion de base de données relationnelles</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/SGBDR/SGBDR.pdf" style="float:left">Cours</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column theme-title">
-        <h4>Architectures matérielles, systèmes d'exploitation et réseaux</h4>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Composants intégrés d'un système sur puce</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/SoC/SoC.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/SoC/SoC_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Gestion des processus et des ressources</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/processus/processus.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/processus/processus_TP.pdf" style="float:right">TP</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Protocoles de routage</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/protocoles_routage/protocoles_routage_tp.pdf" style="float:left">TP</a>
-          <a href="ressources/tnsi/protocoles_routage/protocoles_routage.pdf" style="float:center">Cours</a>
-          <a href="ressources/tnsi/protocoles_routage/protocoles_routage_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Sécurisation des communications</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/securisation_communications/securisation_des_communications.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/securisation_communications/securisation_des_communications_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column theme-title">
-        <h4>Langages et programmation</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Récursivité</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/récursivité/recursivite_slides.pdf" style="float:left">Slides</a>
-          <a href="ressources/tnsi/récursivité/recursivite.pdf" style="float:center">Cours</a>
-          <a href="ressources/tnsi/récursivité/recursivite_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Modularité</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/modularite/modularite.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/modularite/modularite_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Programmation fonctionnelle</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/programmation_fonctionnelle/programmation_fonctionnelle.pdf" style="float:left">Cours</a>
-          <a href="ressources/tnsi/programmation_fonctionnelle/programmation_fonctionnelle_exercices.pdf" style="float:right">Exercices</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Calculabilité, décidabilité</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/calculabilite_decidabilite/calculabilite_decidabilite.pdf" style="float:left">Cours</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column theme-title">
-        <h4>Algorithmique</h4>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Méthode "diviser pour régner"</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/diviser_pour_regner/diviser_pour_regner.ipynb" style="float:left" download>Notebook</a>
-          <a href="ressources/tnsi/diviser_pour_regner/diviser_pour_regner_exercices.pdf" style="float:right">Exercice</a>
-        </div>
-      </div>
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Programmation dynamique</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/programmation_dynamique/programmation_dynamique.zip" style="float:left" download>Notebook</a>
-          <a href="ressources/tnsi/programmation_dynamique/alignement_de_sequences.ipynb" style="float:right" download>Alignement de séquences</a>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-      <div class="column chapter">
-        <div class="chapter-title">
-          <h4>Recherche textuelle</h4>
-        </div>
-        <div class="chapter-content">
-          <a href="ressources/tnsi/recherche_textuelle/recherche_textuelle_exercices.pdf" style="float:left">Exercices</a>
-          <a href="ressources/tnsi/recherche_textuelle/boyer_moore_horspool.zip" style="float:right" download>Boyer Moore Horspool</a>
-        </div>
-      </div>
-      <div class="column">
+  </div>
 
+  <!-- Page Content -->
+  <div class="container px-4 py-5" id="page content">
+    <div class="divider"></div>
+    <h2 class="p-2 shadow-sm border-bottom">Structures de données</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2>Dictionnaires</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <div class="row text-left">
+             <div class="col-6">
+               <a href="#" class="icon-link">
+                 Cours
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-6">
+               <a href="#" class="icon-link">
+                 Exercices
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+           </div>
+        </div>
       </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2>Programmation objet</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <div class="row text-left">
+             <div class="col-4">
+               <a href="ressources/tnsi/programmation_objet/programmation_objet_slides.pdf" class="icon-link">
+                 Slides
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-4">
+               <a href="ressources/tnsi/programmation_objet/programmation_objet.pdf" class="icon-link">
+                 Cours
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-4">
+               <a href="ressources/tnsi/programmation_objet/programmation_objet_exercices.pdf" class="icon-link">
+                 Exercices
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+           </div>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2>Listes chaîneés</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <div class="row text-left">
+             <div class="col-4">
+               <a href="ressources/tnsi/liste_chainee/liste_chainee_slides.pdf" class="icon-link">
+                 Slides
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-4">
+               <a href="ressources/tnsi/liste_chainee/liste_chainee.pdf" class="icon-link">
+                 Cours
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-4">
+               <a href="ressources/tnsi/liste_chainee/liste_chainee_exercices.pdf" class="icon-link">
+                 Exercices
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+           </div>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2>Piles et Files</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <div class="row text-left">
+           <div class="col-4">
+             <a href="ressources/tnsi/piles_files/piles_files_slides.pdf" class="icon-link">
+               Slides
+               <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+             </a>
+           </div>
+           <div class="col-4">
+             <a href="ressources/tnsi/piles_files/piles_files.pdf" class="icon-link">
+               Cours
+               <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+             </a>
+           </div>
+           <div class="col-4">
+             <a href="ressources/tnsi/piles_files/piles_files_exercices.pdf" class="icon-link">
+               Exercices
+               <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+             </a>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="divider"></div>
+   <h2 class="p-2 shadow-sm border-bottom">Arbres et Graphes</h2>
+     <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+       <div class="col d-flex align-items-start">
+         <div>
+           <h2>Arbres</h2>
+               <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+               <div class="row text-left">
+                  <div class="col-6">
+                    <a href="ressources/tnsi/arbres/arbres.pdf" class="icon-link">
+                      Cours
+                      <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a href="ressources/tnsi/arbres/arbres_exercices.pdf" class="icon-link">
+                      Exercices
+                      <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                    </a>
+                  </div>
+                </div>
+             </div>
+           </div>
+       <div class="col d-flex align-items-start">
+         <div>
+           <h2>Arbres binaires de recherche</h2>
+           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+           <div class="row text-left">
+              <div class="col-6">
+                <a href="ressources/tnsi/arbres/arbres_binaires.pdf" class="icon-link">
+                  Cours
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="ressources/tnsi/arbres/arbres_binaires_exercices.pdf" class="icon-link">
+                  Exercices
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+            </div>
+         </div>
+       </div>
+       <div class="col d-flex align-items-start">
+         <div>
+           <h2>Graphes</h2>
+           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+           <div class="row text-left">
+              <div class="col-4">
+                <a href="ressources/tnsi/graphes/graphes.pdf" class="icon-link">
+                  Cours
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="ressources/tnsi/graphes/graphes_exercices.pdf" class="icon-link">
+                  Exercices
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="ressources/tnsi/graphes/graphes_algorithmes_exercices.pdf" class="icon-link">
+                  Exercices algorithmes
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+            </div>
+         </div>
+       </div>
+       <div class="col d-flex align-items-start">
+         <div>
+           <h2>Algorithme de Dijkstra</h2>
+           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+           <div class="row text-left">
+            <div class="col-4">
+              <a href="ressources/tnsi/graphes/beamer_dijkstra.pdf" class="icon-link">
+                Slides
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="ressources/tnsi/graphes/dijkstra.zip" download class="icon-link">
+                Notebook
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="ressources/tnsi/graphes/dijkstra_exercices.pdf" class="icon-link">
+                Exercices
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+   <div class="divider"></div>
+   <h2 class="p-2 shadow-sm border-bottom">Bases de données</h2>
+   <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+     <div class="col d-flex align-items-start">
+       <div>
+         <h2>Modèle relationnel</h2>
+         <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+         <div class="row text-left">
+          <div class="col-6">
+            <a href="ressources/tnsi/modele_relationnel/modele_relationnel_slides.pdf" class="icon-link">
+              Slides
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="ressources/tnsi/modele_relationnel/modele_relationnel_exercices.pdf" class="icon-link">
+              Exercices
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+     </div>
+     <div class="col d-flex align-items-start">
+       <div>
+         <h2>SQL : mises à jour</h2>
+         <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+         <div class="row text-left">
+            <div class="col-6">
+              <a href="ressources/tnsi/bases_de_donnees_relationnelles/bases_de_donnees_relationnelles.pdf" class="icon-link">
+                Cours
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            <div class="col-6">
+              <a href="ressources/tnsi/bases_de_donnees_relationnelles/bases_de_donnees_relationnelles_exercices.pdf" class="icon-link">
+                Exercices
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+          </div>
+       </div>
+     </div>
+     <div class="col d-flex align-items-start">
+       <div>
+         <h2>SQL : requêtes</h2>
+         <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+         <div class="row text-left">
+            <div class="col-4">
+              <a href="ressources/tnsi/SQL/SQL.pdf" class="icon-link">
+                Cours
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="ressources/tnsi/SQL/base_de_donnees_CDI.zip" download class="icon-link">
+                Base de données
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="ressources/tnsi/SQL/SQL_exercices.pdf" class="icon-link">
+                Exercices
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+          </div>
+       </div>
+     </div>
     </div>
-    <!-- /.row -->
-    </section>
+    <div class="divider"></div>
+    <h2 class="p-2 shadow-sm border-bottom">Architectures, systèmes et réseaux</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2>Système sur puce</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <div class="row text-left">
+            <div class="col-6">
+              <a href="ressources/tnsi/SoC/SoC.pdf" class="icon-link">
+                Cours
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            <div class="col-6">
+              <a href="ressources/tnsi/SoC/SoC_exercices.pdf" class="icon-link">
+                Exercices
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2>Gestion des processus</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <div class="row text-left">
+             <div class="col-6">
+               <a href="ressources/tnsi/processus/processus.pdf" class="icon-link">
+                 Cours
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-6">
+               <a href="ressources/tnsi/processus/processus_TP.pdf" class="icon-link">
+                 TP
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+           </div>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2>Protocoles de routage</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <div class="row text-left">
+             <div class="col-4">
+               <a href="ressources/tnsi/protocoles_routage/protocoles_routage_tp.pdf" class="icon-link">
+                 TP
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-4">
+               <a href="ressources/tnsi/protocoles_routage/protocoles_routage.pdf" class="icon-link">
+                 Cours
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-4">
+               <a href="ressources/tnsi/protocoles_routage/protocoles_routage_exercices.pdf" class="icon-link">
+                 Exercices
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+           </div>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2>Sécurisation des communications</h2>
+          <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+          <div class="row text-left">
+             <div class="col-6">
+               <a href="ressources/tnsi/securisation_communications/securisation_des_communications.pdf" class="icon-link">
+                 Cours
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+             <div class="col-6">
+               <a href="ressources/tnsi/securisation_communications/securisation_des_communications_exercices.pdf" class="icon-link">
+                 Exercices
+                 <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+               </a>
+             </div>
+           </div>
+        </div>
+      </div>
+     </div>
+     <div class="divider"></div>
+     <h2 class="p-2 shadow-sm border-bottom">Langages et programmation</h2>
+     <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+       <div class="col d-flex align-items-start">
+         <div>
+           <h2>Récursivité</h2>
+           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+           <div class="row text-left">
+            <div class="col-4">
+              <a href="ressources/tnsi/récursivité/recursivite_slides.pdf" class="icon-link">
+                Slides
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="ressources/tnsi/récursivité/recursivite.pdf" class="icon-link">
+                Cours
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="ressources/tnsi/récursivité/recursivite_exercices.pdf" class="icon-link">
+                Exercices
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+              </a>
+            </div>
+          </div>
+         </div>
+       </div>
+       <div class="col d-flex align-items-start">
+         <div>
+           <h2>Modularité</h2>
+           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+           <div class="row text-left">
+              <div class="col-6">
+                <a href="ressources/tnsi/modularite/modularite.pdf" class="icon-link">
+                  Cours
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="ressources/tnsi/modularite/modularite_exercices.pdf" class="icon-link">
+                  Exercices
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+            </div>
+         </div>
+       </div>
+       <div class="col d-flex align-items-start">
+         <div>
+           <h2>Programmation fonctionnelle</h2>
+           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+           <div class="row text-left">
+              <div class="col-6">
+                <a href="ressources/tnsi/programmation_fonctionnelle/programmation_fonctionnelle.pdf" class="icon-link">
+                  Cours
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="ressources/tnsi/programmation_fonctionnelle/programmation_fonctionnelle_exercices.pdf" class="icon-link">
+                  Exercices
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+            </div>
+         </div>
+       </div>
+       <div class="col d-flex align-items-start">
+         <div>
+           <h2>Calculabilité, décidabilité</h2>
+           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+           <div class="row text-left">
+              <div class="col-12">
+                <a href="ressources/tnsi/calculabilite_decidabilite/calculabilite_decidabilite.pdf" class="icon-link">
+                  Cours
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+            </div>
+         </div>
+       </div>
+      </div>
+      <div class="divider"></div>
+      <h2 class="p-2 shadow-sm border-bottom">Algorithmique</h2>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+        <div class="col d-flex align-items-start">
+          <div>
+            <h2>Méthode "diviser pour régner"</h2>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <div class="row text-left">
+              <div class="col-6">
+                <a href="ressources/tnsi/diviser_pour_regner/diviser_pour_regner.ipynb" download class="icon-link">
+                  Notebook
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="ressources/tnsi/diviser_pour_regner/diviser_pour_regner_exercices.pdf" class="icon-link">
+                  Exercices
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div>
+            <h2>Programmation dynamique</h2>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <div class="row text-left">
+               <div class="col-6">
+                 <a href="ressources/tnsi/programmation_dynamique/programmation_dynamique.zip" download class="icon-link">
+                   Notebook
+                   <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                 </a>
+               </div>
+               <div class="col-6">
+                 <a href="ressources/tnsi/programmation_dynamique/alignement_de_sequences.ipynb" download class="icon-link">
+                   Alignement de séquences
+                   <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                 </a>
+               </div>
+             </div>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div>
+            <h2>Recherche textuelle</h2>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <div class="row text-left">
+               <div class="col-6">
+                 <a href="ressources/tnsi/recherche_textuelle/recherche_textuelle_exercices.pdf" class="icon-link">
+                   Exercices
+                   <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                 </a>
+               </div>
+               <div class="col-6">
+                 <a href="ressources/tnsi/recherche_textuelle/boyer_moore_horspool.zip" download class="icon-link">
+                   Boyer Moore Horspool
+                   <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+                 </a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
 </body>
 
 </html>

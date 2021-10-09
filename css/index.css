@@ -2,38 +2,6 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
 h1{font-size: 25px;}h2{font-size: 21px;}h3{font-size: 18px;}h4{font-size: 16px;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 
-header {
-    max-width: 1000px;
-    margin: auto;
-    font-family: PermanentMarker;
-    background-color: #80BD9E;
-}
-
-nav {
-    display: inline-block;
-    vertical-align: middle;
-}
-nav ul li a {
-    background: #EEE;
-    padding: 2px 10px;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #444;
-    border-radius: 10px;
-}
-nav ul li a:hover {
-  color: #f1f1f1;
-  background: #bc2629;/*#cc4e5c;*/
-}
-nav ul li {
-    display: inline-block;
-    margin: 10px;
-}
-nav ul {
-    list-style: none;
-}
-
 body > section {
     max-width: 1000px;
     margin: auto;
@@ -42,18 +10,6 @@ body > section {
     font-family: arial;
     font-size: 17px;
 }
-#logo {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 30px;
-    margin-right: 75px;
-}
-#logo img {
-    width: 64px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
 @font-face {
    font-family: PermanentMarker;
    src: url(../fonts/PermanentMarker-Regular.ttf);
