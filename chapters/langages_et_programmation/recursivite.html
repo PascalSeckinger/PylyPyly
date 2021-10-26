@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmation objet - Terminale NSI</title>
+    <meta name="description" content="Programmation objet - Terminale NSI">
+    <link rel="stylesheet" href="../../css/chapters.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../js/chapters.js"></script>
+    <!--code highlight -->
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-light.min.css">
+    <script src="../../libs/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+	<header>
+    <div id="header">
+      <!--../common/navbar.html-->
+    </div>
+	</header>
+
+  <div class="container px-4 py-5" id="main">
+    <h1 class="pb-2 border-bottom">Récusivité</h1>
+    <div class="container px-4">
+      <h2>Un premier exemple</h2>
+      <p>La somme des $n$ premiers entiers est la somme :
+        $$1+2+ \cdots + (n-1) + n$$
+        On peut calculer cette somme à l'aide du programme suivant :
+<pre><code>def somme(n):
+  s = 0
+  for i in range(n+1):
+    s += i
+  return s</code></pre>
+        <!-- <iframe width="100%" height="360" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20somme%28n%29%3A%0A%20%20%20%20s%20%3D%200%0A%20%20%20%20for%20i%20in%20range%28n%2B1%29%3A%0A%20%20%20%20%20%20%20%20s%20%2B%3D%20i%0A%20%20%20%20return%20s%0A%20%20%20%20%0Aprint%28somme%285%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=2&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe> -->
+        La fonction <code style="color:black">somme</code> est <b>itérative</b>, à l'aide d'une boucle for elle répète des instructions un certain nombre de fois.
+      </p>
+      <p>
+      Une autre façon de programmer <code>somme</code> est de remarquer que $somme(n) = somme(n-1) + n$ :
+      $$somme(n) = \underset{somme(n-1)}{\boxed{0+1+2+\cdots +(n-1)}}+n$$
+      Cette formule est valable pour $n$ entier strictement positif, pour $n = 0$, on a simplement $somme(0) = 0$.
+
+      On obtient une <b>formulation récursive</b>, la définition de $somme$ fait appel à $somme$ :
+      $$  somme(n) = \left\{
+      \begin{array}{ll}
+          0 & \text{si } n=0 \\
+          n+somme(n-1) & \text{si } n>0 \\
+      \end{array}
+      \right. $$
+
+      Cette formulation donne directement le programme suivant :
+<pre><code>def somme(n):
+  if n == 0:
+    return 0
+  else:
+    return somme(n-1) + n</code></pre>
+      La nouvelle fonction <code>somme</code> ainsi obtenue est une <b>fonction récursive</b>, elle contient un appel à elle-même.
+      <p style="margin-top:6px">
+        Exemple : Visualisation d'un appel à <code>somme(3)</code>
+        <iframe width="800" height="540" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20somme%28n%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20n%20%2B%20somme%28n-1%29%0A%20%20%20%20%0Aprint%28somme%283%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=1&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+      </p>
+    </div>
+    <div class="container px-4">
+        <h2>Fonction récursive</h2>
+        <p>
+        Une fonction est dite <b>récursive</b> si elle contient un appel à elle-même. Elle est toujours constituée de un ou plusieurs <b>cas de base (ou conditions d'arrêt)</b> et de un ou plusieurs <b>cas récursifs</b>.
+        <br>
+        Les cas récursifs sont ceux qui renvoient à la fonction entrain d'être définie et les cas de base sont ceux qui donne un résultat.</p>
+<pre><code>def somme(n):
+  #cas de base
+  if n == 0:
+    return 0
+  #appel récursif
+  else:
+    return somme(n-1) + n</code></pre>
+      L'appel à <code>somme(n-1)</code> dans le corps de la fonction est un <b>appel récurssif</b>.
+
+      <p style="margin-top:16px">
+        Prenons pour autre exemple la suite de Fibonacci qui doit son nom à Leonardo Fibonacci. Dans un problème récréatif posé dans l'ouvrage <i>Liber abaci</i> publié en 1202, il y décrit la croissance d'une population de lapins. La fonction <code>fibonacci(n)</code> donne le nombre de lapins au bout de <code>n</code> mois et est définie de la manière suivante :
+        \[  \text{fibonacci}(n) = \left\{
+          \begin{array}{ll}
+          0 & \text{si } n=0 \\
+          1 & \text{si } n=1 \\
+          \text{fibonacci}(n-2) + \text{fibonacci}(n-1) & \text{si } n>1 \\
+          \end{array}
+        \right. \]
+        Ce qui donne la fonction python ci-dessous :
+<pre><code>def fibonacci(n):
+  #premier cas de base
+  if n == 0:
+    return 0
+  #deuxième cas de base
+  elif n == 1:
+    return 1
+  #appel récurssif double
+  else:
+    return fibonacci(n-1) + fibonacci(n-2)</code></pre>
+        <a href="https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20fibonacci%28n-1%29%2Bfibonacci%28n-2%29%0A%20%20%20%20%20%20%20%20%0Aprint%28fibonacci%284%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Visualisation de l'appel à <code>fibonacci(4)</code></a> <br>
+        Cette fonction a deux cas de base et un cas <b>récursif double</b>, il y a deux appels récursifs dans le cas récursif.
+        <p style="margin-top:16px">
+          L'ensemble des appels récursifs lors de l'éxécution d'une fonction récursive peut être représenté sous la forme d'un <b>arbre des appels</b>. Par exemple pour <code>fibonacci(4)</code>, on obtient l'arbre suivant :
+          <img src="recursivite.svg" style="  display: block; margin: auto;" alt="Arbre des appels">
+        </p>
+        <p>
+          Pour qu'une fonction récursive se termine, il faut qu'au bout d'un nombre fini d'appels récursifs un cas de base soit appelé.
+          <br>
+          C'est bien le cas dans un appel de <code>somme(n)</code> où l'appel récurssif est <code>somme(n-1)</code>, après $n-1$ appels le cas de base est atteint.
+          De la même manière, un appel à <code>fibonacci(n)</code> fini toujours par appeler <code>fibonacci(0)</code> et <code>fibonacci(1)</code>.
+          Cependant, dans les deux cas, il faut que <code>n</code> soit un entier positif.
+        </p>
+      </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="#" class="btn btn-primary" role="button">
+          Exercices
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

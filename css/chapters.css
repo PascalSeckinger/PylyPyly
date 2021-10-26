@@ -1,0 +1,24 @@
+#main    { counter-reset: h2counter; }
+#main h2 { counter-reset: h3counter; }
+#main h3 { counter-reset: h4counter; }
+
+#main h2::before {
+    counter-increment: h2counter;
+    content: counter(h2counter) ".";
+}
+#main h3::before {
+    counter-increment: h3counter;
+    content: counter(h2counter) "." counter(h3counter) ".";
+}
+#main h4::before {
+    counter-increment: h4counter;
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".";
+}
+
+code {
+  font-family: Consolas,"courier new";
+  color: black !important;
+  /* background-color: #f1f1f1;
+  padding: 2px; */
+  font-size: 110%;
+}
