@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmation objet - Terminale NSI</title>
+    <meta name="description" content="Programmation objet - Terminale NSI">
+    <link rel="stylesheet" href="../../css/chapters.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../js/chapters.js"></script>
+    <!--code highlight -->
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-light.min.css">
+    <script src="../../libs/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+	<header>
+    <div id="header">
+      <!--../common/navbar.html-->
+    </div>
+	</header>
+
+  <div class="container px-4 py-5" id="main">
+    <h1 class="pb-2 border-bottom">Programmation objet</h1>
+    <div class="container px-4">
+      <h2>Des objets en classe de première</h2>
+    </div>
+
+    <div class="container px-4">
+      <h2>Classes et attributs</h2>
+      <h3>Notions de classes et attributs</h3>
+      <p>Imaginons que l'on souhaite manipuler des rectangles qui sont définis par ses deux côtés.
+      On peut définir une structure <code>Rectangle</code> avec les deux <b>attributs</b> <code>longueur</code> et <code>largeur</code>.</p>
+      <p>Python permet la définition de cette structure à l'aide d'une <b>classe</b> de la manière suivante :
+<pre><code>class Rectangle:
+  def __init__(self, longueur, largeur):
+    self.longueur = longueur
+    self.largeur = largeur</code></pre></p>
+
+    <p>La définition d’une nouvelle classe est introduite par le mot clef <code>class</code>, suivi du nom de la classe et du symbole <code>:</code>.
+    Le nom de la classe commence par une lettre majuscule.</p>
+
+    <p>Lors de la création de la classe, on ne connait pas à l'avance le nom des objets qui seront créés. D'où la nécessité de représenter le futur objet créé à l'aide d'un
+mot-clé <code>self</code>.</p>
+
+    <p>Le constructeur <code>__init__</code> permet de définir des attributs au futur objet créé ainsi que de leur affecter les valeurs désirées.</p>
+
+    <h3>Création d'un objet et manipulation des attributs</h3>
+    <p>Une fois la classe <code>Rectangle</code> définie, on peut créer un élément correspondant à cette structure appelé <b>objet</b> ou <b>instance</b> de la classe Rectangle.
+      On peut par exemple définir et affecter à la variable <code>r</code> un objet représentant le rectangle de longueur 6 et de largeur 4 de la manière suivante :</p>
+<pre><code>r = Rectangle(6,4)</code></pre></p>
+  <p>Le constructeur <code>__init__</code> est exécuté, le mot-clé <code>self</code> dans le
+le code représente l'instance de la classe en cours de création ici sauvegardé dans la variable <code>r</code>.</p>
+
+  <p> On peut accéder aux attributs de objet <code>r</code> avec la notation <code>r.a</code> où <code>a</code> désigne le nom de l’attribut visé :
+<pre><code>>>> r.longueur
+6
+>>> r.largeur
+4</code></pre>
+Les attributs en Python sont mutables :
+<pre><code>>>> r.longueur *= 2
+>>> r.longueur
+12</code></pre>
+    </div>
+
+    <div class="container px-4">
+      <h2>Méthodes</h2>
+    </div>
+  </body>
+  </html>
