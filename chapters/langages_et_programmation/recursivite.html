@@ -58,11 +58,6 @@
   else:
     return somme(n-1) + n</code></pre>
       La nouvelle fonction <code>somme</code> ainsi obtenue est une <b>fonction récursive</b>, elle contient un appel à elle-même.
-      <p style="margin-top:6px">
-        Exemple : Visualisation d'un appel à <code>somme(3)</code>
-        
-        <iframe width="800" height="540" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20somme%28n%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20n%20%2B%20somme%28n-1%29%0A%20%20%20%20%0Aprint%28somme%283%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=1&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
-      </p>
     </div>
     <div class="container px-4">
         <h2>Fonction récursive</h2>
@@ -99,14 +94,24 @@
   #appel récurssif double
   else:
     return fibonacci(n-1) + fibonacci(n-2)</code></pre>
-        <a href="https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20fibonacci%28n-1%29%2Bfibonacci%28n-2%29%0A%20%20%20%20%20%20%20%20%0Aprint%28fibonacci%284%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Visualisation de l'appel à <code>fibonacci(4)</code></a> <br>
+        <!-- <a href="https://pythontutor.com/visualize.html#code=def%20fibonacci%28n%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20elif%20n%20%3D%3D%201%3A%0A%20%20%20%20%20%20%20%20return%201%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20fibonacci%28n-1%29%2Bfibonacci%28n-2%29%0A%20%20%20%20%20%20%20%20%0Aprint%28fibonacci%284%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Visualisation de l'appel à <code>fibonacci(4)</code></a> <br> -->
         Cette fonction a deux cas de base et un cas <b>récursif double</b>, il y a deux appels récursifs dans le cas récursif.
-        <p style="margin-top:16px">
-          L'ensemble des appels récursifs lors de l'éxécution d'une fonction récursive peut être représenté sous la forme d'un <b>arbre des appels</b>. Par exemple pour <code>fibonacci(4)</code>, on obtient l'arbre suivant :
+      </div>
+      <div class="container px-4">
+          <h2>Pile d'exécution et Arbre des appels</h2>
+          <p>
+          Lors de l'appel d'une fonction récursive, la mémoire est organisée sous forme de pile, appelée pile d'exécution, qui contient chaque appel de la fonction.
+          </p>
+          <p style="margin-top:6px">
+            Exemple : Visualisation d'un appel à <code>somme(3)</code>
+
+            <iframe width="800" height="540" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20somme%28n%29%3A%0A%20%20%20%20if%20n%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20return%200%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20return%20n%20%2B%20somme%28n-1%29%0A%20%20%20%20%0Aprint%28somme%283%29%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=1&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+          </p>
+          <p>L'ensemble des appels récursifs lors de l'éxécution d'une fonction récursive peut être représenté sous la forme d'un <b>arbre des appels</b>. Par exemple pour <code>fibonacci(4)</code>, on obtient l'arbre suivant :
           <img src="recursivite.svg" style="  display: block; margin: auto;" alt="Arbre des appels">
-        </p>
+          </p>
         <p>
-          Pour qu'une fonction récursive se termine, il faut qu'au bout d'un nombre fini d'appels récursifs un cas de base soit appelé.
+          <i>Remarque : </i>Pour qu'un appel à une fonction récursive se termine, il faut qu'au bout d'un nombre fini d'appels récursifs un cas de base soit appelé.
           <br>
           C'est bien le cas dans un appel de <code>somme(n)</code> où l'appel récurssif est <code>somme(n-1)</code>, après $n-1$ appels le cas de base est atteint.
           De la même manière, un appel à <code>fibonacci(n)</code> fini toujours par appeler <code>fibonacci(0)</code> et <code>fibonacci(1)</code>.
