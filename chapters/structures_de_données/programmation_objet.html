@@ -32,13 +32,14 @@
     <div class="container px-4">
       <h2>Classes et attributs</h2>
       <h3>Notions de classes et attributs</h3>
-      <p>Imaginons que l'on souhaite manipuler des rectangles qui sont définis par ses deux côtés.
-      On peut définir une structure <code>Rectangle</code> avec les deux <b>attributs</b> <code>longueur</code> et <code>largeur</code>.</p>
+      <p>Imaginons que le propriétaire d'un magasin informatique développe un programme pour gérer les articles en vente.
+        Pour cela, il définit une structure <code>Article</code> avec les trois <b>attributs</b> <code>reference</code>, <code>genre</code> et <code>prix</code> qui caractérise les articles.</p>
       <p>Python permet la définition de cette structure à l'aide d'une <b>classe</b> de la manière suivante :
-<pre><code>class Rectangle:
-  def __init__(self, longueur, largeur):
-    self.longueur = longueur
-    self.largeur = largeur</code></pre></p>
+<pre><code>class Article:
+  def __init__(self, reference, genre, prix):
+      self.ref = reference
+      self.genre = genre
+      self.prix = prix</code></pre></p>
 
     <p>La définition d’une nouvelle classe est introduite par le mot clef <code>class</code>, suivi du nom de la classe et du symbole <code>:</code>.
     Le nom de la classe commence par une lettre majuscule.</p>
@@ -46,28 +47,163 @@
     <p>Lors de la création de la classe, on ne connait pas à l'avance le nom des objets qui seront créés. D'où la nécessité de représenter le futur objet créé à l'aide d'un
 mot-clé <code>self</code>.</p>
 
-    <p>Le constructeur <code>__init__</code> permet de définir des attributs au futur objet créé ainsi que de leur affecter les valeurs désirées.</p>
+    <p>Le <b>constructeur</b> <code>__init__</code> permet de définir des attributs au futur objet créé ainsi que de leur affecter les valeurs désirées.</p>
 
     <h3>Création d'un objet et manipulation des attributs</h3>
-    <p>Une fois la classe <code>Rectangle</code> définie, on peut créer un élément correspondant à cette structure appelé <b>objet</b> ou <b>instance</b> de la classe Rectangle.
-      On peut par exemple définir et affecter à la variable <code>r</code> un objet représentant le rectangle de longueur 6 et de largeur 4 de la manière suivante :</p>
-<pre><code>r = Rectangle(6,4)</code></pre></p>
+    <p>Une fois la classe <code>Article</code> définie, on peut créer un élément correspondant à cette structure appelé <b>objet</b> ou <b>instance</b> de la classe Article.
+      On peut par exemple définir et affecter à la variable <code>article</code> un objet représentant un clavier à 20€ dont la référence est 42 de la manière suivante :</p>
+<pre><code>article = Article(42, "Clavier", 20)</code></pre></p>
   <p>Le constructeur <code>__init__</code> est exécuté, le mot-clé <code>self</code> dans le
-le code représente l'instance de la classe en cours de création ici sauvegardé dans la variable <code>r</code>.</p>
+le code représente l'instance de la classe en cours de création ici sauvegardé dans la variable <code>article</code>.</p>
 
-  <p> On peut accéder aux attributs de objet <code>r</code> avec la notation <code>r.a</code> où <code>a</code> désigne le nom de l’attribut visé :
-<pre><code>>>> r.longueur
-6
->>> r.largeur
-4</code></pre>
+  <p> On peut accéder aux attributs de l'objet <code>article</code> avec la notation <code>article.a</code> où <code>a</code> désigne le nom de l’attribut visé :
+<pre><code>>>> article.ref
+42
+>>> article.prix
+20
+>>> article.genre
+Clavier</code></pre>
 Les attributs en Python sont mutables :
-<pre><code>>>> r.longueur *= 2
->>> r.longueur
-12</code></pre>
+<pre><code>>>> article.prix -= 5
+>>> article.prix
+15</code></pre>
     </div>
 
     <div class="container px-4">
       <h2>Méthodes</h2>
+      <h3>Notion de méthode</h3>
+      <p>Les fonctions qui manipulent les attributs d'un objet s'appelent les <b>méthodes</b>. Elles sont définies à la suite dans la création de la classe :<pre><code>class Article:
+  ''' Classe permetant de représenter un article du stock '''
+  def __init__(self, reference, genre, prix):
+    self.ref = reference
+    self.genre = genre
+    self.prix = prix
+
+  def texte(self):
+    ''' Retourne une chaîne de caractères décrivant l'article '''
+    return str(ref)+' '+genre+' '+str(prix)+'€'
+
+  def solde(self, t):
+    '''Applique une réduction de t% au prix de l'article'''
+    self.prix = self.prix*(1-t/100)</code></pre></p>
+    <p>Le premier paramètre est toujours l'objet sur lequel la méthode est appliquée représenté par le mot clef <code>self</code>.
+    </p>
+    <p> L'appel des méthodes <code>texte</code> et <code>solde</code> sur l'objet <code>article</code> est réalisé ainsi :
+<pre><code>>>> p = Article(42, "Clavier", 20)
+>>> p.texte()
+42 Clavier 20€
+>>> p.solde(20)
+>>> p.prix
+16</code></pre>
+    Cette notation utilise la même notation pointé que l'accès aux attributs de <code>article</code>, mais fait apparaître une paire de parenthèses comme pour l'appel d’une fonction.
+    </p>
+    <h3>Méthodes particulières en Python</h3>
+    <p>Il existe en Python un certain nombre de méthodes particulières, chacune avec un nom fixé et entouré de deux paires de <code>_</code>.
+    Elles permettent d'alléger ou d'uniformiser la syntaxe. Le tableau suivant en donne quelques exemples.
+    <table class="table table-bordered table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">méthode</th>
+          <th scope="col">appel</th>
+          <th scope="col">effet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>__str__(self)</code></td>
+          <td><code>str(p)</code> ou <code>print(p)</code></td>
+          <td>renvoie une chaîne de caractère décrivant <code>p</code></td>
+        </tr>
+        <tr>
+          <td><code>__len__(self)</code></td>
+          <td><code>len(p)</code></td>
+          <td>renvoie un entier représentant la taille de <code>p</code></td>
+        </tr>
+        <tr>
+          <td><code>__lt__(self, q)</code></td>
+          <td><code>p < q</code></td>
+          <td>renvoie <code>True</code> si <code>p</code> est strictement plus petit que <code>q</code> et <code>False</code> sinon.</td>
+        </tr>
+        <tr>
+          <td><code>__contains__(self, x)</code></td>
+          <td><code>x in p</code></td>
+          <td>renvoie <code>True</code> si <code>x</code> appartient à <code>p</code> et <code>False</code> sinon.</td>
+        </tr>
+        <tr>
+          <td><code>__getitem__(self, i)</code></td>
+          <td><code>p[i]</code></td>
+          <td>renvoie l'élément d'indice <code>i</code> de <code>p</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </p>
+    <p>La méthode <code>texte</code> de notre classe <code>Article</code> correspond à la méthode spéciale <code>__str__</code> :<code><pre>def texte(self):
+  ''' Retourne une chaîne de caractères décrivant le Article '''
+  return str(ref)+' '+genre+' '+str(prix)+'€'
+
+def __str__(self):
+  return self.texte()</code></pre></p>
+    <p>On pourra alors écrire :<code><pre>>>> p = Article(42, "Clavier", 20)
+>>> print(p)
+42 Clavier 20€</code></pre></p>
+    </div>
+
+    <div class="container px-4">
+      <h2>Objet en tant qu'attribut</h2>
+      <p>
+        Le propriétaire du magasin souhaite également pouvoir gérer les commandes de ses clients à l'aide de son programme.
+        Il créé pour cela deux nouvelles classes, <code>Client</code> et <code>Commande</code>.
+<code><pre>class Client:
+  '''Représente un client du magasin'''
+  def __init__(self, nom, adresse, tel):
+      self.nom = nom
+      self.adresse = adresse
+      self.tel = tel
+
+class Commande:
+  '''Représente une commande réalisé dans le magasin.
+
+  client : Client
+       Le client qui passe la commande
+  articles : List[Article]
+       Liste des articles de la commande.'''
+
+  def __init__(self, client):
+    self.client = client
+    self.articles = []
+
+    def ajouter_article(self, article):
+      self.articles.append(article)
+
+    def calcule_montant(self):
+        somme = 0
+        for a in self.articles:
+            somme += a.prix
+        return somme</code></pre>
+        L'attribut <code>client</code> de la classe <code>Commande</code> est de type <code>Client</code> et l'attribut <code>articles</code> est une liste d'objet de type <code>article</code>.
+      </p>
+      <p>
+        On peut alors accéder à toutes les informations des différentes commandes.
+<code><pre>
+>>> client = Client('Gilbert Gosseyn', '1 place de la Cité des jeux 42000 Venus', '123456789')
+>>> commande = Commande(client)
+>>> commande.client.adresse
+1 place de la Cité des jeux 42000 Venus
+>>> commande.client.nom
+Gilbert Gosseyn
+>>> p1 = Article(42, "Clavier", 20)
+>>> p2 = Article(13, "Souris", 15)
+>>> p3 = Article(19, "Ecran", 200)
+>>> commande.ajouter_article(p1)
+>>> commande.ajouter_article(p2)
+>>> commande.ajouter_article(p3)
+>>> commande.calcule_montant()
+235
+>>> for article in commande.articles:
+      print(article)
+42 Clavier 20€
+13 Souris 15€
+19 Ecran 200€</code></pre>
     </div>
   </body>
   </html>
