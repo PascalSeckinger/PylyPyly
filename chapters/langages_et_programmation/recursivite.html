@@ -24,7 +24,7 @@
 	</header>
 
   <div class="container px-4 py-5" id="main">
-    <h1 class="pb-2 border-bottom">Récusivité</h1>
+    <h1 class="pb-2 border-bottom">Récursivité</h1>
     <div class="container px-4">
       <h2>Un premier exemple</h2>
       <p>La somme des $n$ premiers entiers est la somme :
@@ -60,11 +60,13 @@
       La nouvelle fonction <code>somme</code> ainsi obtenue est une <b>fonction récursive</b>, elle contient un appel à elle-même.
     </div>
     <div class="container px-4">
-        <h2>Fonction récursive</h2>
-        <p>
-        Une fonction est dite <b>récursive</b> si elle contient un appel à elle-même. Elle est toujours constituée de un ou plusieurs <b>cas de base (ou conditions d'arrêt)</b> et de un ou plusieurs <b>cas récursifs</b>.
-        <br>
-        Les cas récursifs sont ceux qui renvoient à la fonction entrain d'être définie et les cas de base sont ceux qui donne un résultat.</p>
+      <h2>Fonction récursive</h2>
+        <ul class="border border-danger rounded">
+          <li>Une fonction est dite <b>récursive</b> si elle contient un appel à elle-même.</li>
+          <li>Elle est toujours constituée de un ou plusieurs <b>cas de base (ou conditions d'arrêt)</b> et de un ou plusieurs <b>cas récursifs</b>.</li>
+        </ul>
+      <p>
+        Les cas récursifs sont ceux qui renvoient à la fonction entrain d'être définie et les cas de base sont ceux qui donne un résultat.
 <pre><code>def somme(n):
   #cas de base
   if n == 0:
@@ -73,7 +75,7 @@
   else:
     return somme(n-1) + n</code></pre>
       L'appel à <code>somme(n-1)</code> dans le corps de la fonction est un <b>appel récurssif</b>.
-
+    </p>
       <p style="margin-top:16px">
         Prenons pour autre exemple la suite de Fibonacci qui doit son nom à Leonardo Fibonacci. Dans un problème récréatif posé dans l'ouvrage <i>Liber abaci</i> publié en 1202, il y décrit la croissance d'une population de lapins. La fonction <code>fibonacci(n)</code> donne le nombre de lapins au bout de <code>n</code> mois et est définie de la manière suivante :
         \[  \text{fibonacci}(n) = \left\{
