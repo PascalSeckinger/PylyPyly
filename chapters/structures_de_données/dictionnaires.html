@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmation objet - Terminale NSI</title>
+    <meta name="description" content="Programmation objet - Terminale NSI">
+    <link rel="stylesheet" href="../../css/chapters.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../js/chapters.js"></script>
+    <!--code highlight -->
+    <link rel="stylesheet" href="../../libs/highlight/styles/atom-one-light.min.css">
+    <script src="../../libs/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+	<header>
+    <div id="header">
+      <!--../common/navbar.html-->
+    </div>
+	</header>
+
+  <div class="container px-4 py-5" id="main">
+    <h1 class="pb-2 border-bottom">Dictionnaires</h1>
+    <div class="container px-4">
+      <h2>Notion de dictionnaire et premier exemple</h2>
+      <p>
+        Un dictionnaire Python est une structure de données permettant de stocker des informations sous la forme de couple «clef : valeur». On accède alors à une valeur du dictionnaire non plus à l'aide d'un indice mais via sa clef.
+      </p>
+      <p>Voici un premier exemple :
+<pre><code>>>> ma_voiture = {"marque":"Ford", "modèle":"Mustang", "année":1964}
+>>> ma_voiture["modèle"]
+Mustang</code></pre>
+        Dans cet exemple le dictionnaire s’appel voiture et les clefs sont <code>"marque"</code>, <code>"modèle"</code> et <code>"année"</code>. La valeur associée à <code>"marque"</code> est <code>"Ford"</code>, celle associée à <code>"modèle"</code> est <code>"Mustang"</code> et celle associée à <code>année</code> est <code>1964</code>.
+      </p>
+    </div>
+    <div class="container px-4">
+      <h2>Créer un dictionnaire</h2>
+      <p class="border border-danger rounded p-2">
+        En Python, un dictionnaire vide peut être créé à l'aide des accolades <code>{}</code>.
+      </p>
+<pre><code>>>> mon_dict_vide = {}</code></pre>
+      <p class="border border-danger rounded p-2">
+        Un dictionnaire contenant une séquence de couples «clef : valeur» est créé en plaçant ces éléments entre accolades {}, séparés par une virgule.
+      </p>
+      <pre><code>>>> ma_voiture = {"marque":"Ford", "modèle":"Mustang", "année":1964}</code></pre>
+    </div>
+  </div>
+</body>
