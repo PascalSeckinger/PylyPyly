@@ -47,6 +47,79 @@ Mustang</code></pre>
         Un dictionnaire contenant une séquence de couples «clef : valeur» est créé en plaçant ces éléments entre accolades {}, séparés par une virgule.
       </p>
       <pre><code>>>> ma_voiture = {"marque":"Ford", "modèle":"Mustang", "année":1964}</code></pre>
+      <p class="border border-danger rounded p-2">
+        Un dictionnaire ne peut pas avoir deux clefs identiques.
+        <pre><code>>>> ma_voiture = {"marque":"Ford", "modèle":"Mustang", \\
+                  "année":1964, "année": 2020}
+>>> ma_voiture
+{"marque":"Ford", "modèle":"Mustang", "année": 2020}
+      </code></pre>
+      </p>
     </div>
+    <div class="container px-4">
+      <h2>Clefs et valeurs</h2>
+      <p class="border border-danger rounded p-2">
+        Un élément d'un dictionnaire est un couple &laquo;clef-valeur&raquo;.
+      </p>
+      <p>
+        Dans l'exemple <code>ma_voiture</code> précédent les clefs sont <code>marque</code>, <code>modèle</code> et <code>année</code> et les valeurs sont <code>Ford</code>, <code>Mustang</code> et <code>1964</code>.
+      </p>
+      <p class="border border-danger rounded p-2">
+        Chaque paire clef-valeur fait correspondre la clef à la valeur qui lui est associée.
+      </p>
+      <p>
+        Pour obtenir la valeur associé à une clef, il suffit d'utiliser la notation avec crochet :
+        <pre><code>>>> ma_voiture["marque"]
+Ford</code></pre>
+      </p>
+      <p class="border border-danger rounded p-2">
+        Pour vérifier la présence d'une clef dans un dictionnaire, on utilise le mot clef <code>in</code>.
+        <pre><code>>>>"année" in ma_voiture
+True</code></pre>
+      </p>
+    </div>
+    <div class="container px-4">
+      <h2>Modifier un dictionnaire</h2>
+      <p class="border border-danger rounded p-2">
+        Pour ajouter une entrée à un dictionnaire, il faut indiquer une clef et une valeur.
+        <pre><code>>>> ma_voiture["couleur"]="rouge"
+>>> ma_voiture
+{"marque":"Ford", "modèle":"Mustang", "année":1964, "couleur":"rouge"}</code></pre>
+      </p>
+      <p class="border border-danger rounded p-2">
+        Pour supprimer une entrée, on utilise la fonction <code>del</code>.
+        <pre><code>>>> del ma_voiture["couleur"]</code></pre>
+      </p>
+    </div>
+    <div class="container px-4">
+      <h2>Parcourir un dictionnaire</h2>
+      <p class="border border-danger rounded p-2">
+        La méthode <code>keys()</code> et le mot clef <code>in</code> permettent de parcourir les clefs d'un dictionnaire.
+        <pre><code>>>> for k in ma_voiture.keys():
+...       print(k)
+marque
+modèle
+année</code></pre>
+      </p>
+      <p>
+        <b><i>Remarque : </i></b>On peut simplement écrire
+<pre><code>>>> for k in ma_voiture:</code></pre>
+      </p>
+      <p class="border border-danger rounded p-2">
+        La méthode <code>values()</code> permet de parcourir les valeurs d'un dictionnaire.
+        <pre><code>>>> for v in ma_voiture.values():
+...       print(k)
+Ford
+Mustang
+1964</code></pre>
+      </p>
+      <p class="border border-danger rounded p-2">
+        La méthode <code>items()</code> permet de parcourir les valeurs d'un dictionnaire.
+        <pre><code>>>> for k,v in ma_voiture.items():
+...       print(k,v)
+marque Ford
+modèle Mustang
+année 1964</code></pre>
+      </p>
   </div>
 </body>
