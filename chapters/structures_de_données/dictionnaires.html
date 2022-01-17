@@ -114,12 +114,35 @@ Mustang
 1964</code></pre>
       </p>
       <p class="border border-danger rounded p-2">
-        La méthode <code>items()</code> permet de parcourir les valeurs d'un dictionnaire.
+        La méthode <code>items()</code> permet de parcourir les couples clef, valeur d'un dictionnaire.
         <pre><code>>>> for k,v in ma_voiture.items():
 ...       print(k,v)
 marque Ford
 modèle Mustang
 année 1964</code></pre>
       </p>
+    </div>
+    <div class="container px-4">
+      <h2>Dictionnaire imbriqué</h2>
+      <p>
+      Un dictionnaire peut lui-même être une valeur d'un autre dictionnaire :
+      <pre><code>>>> mes_voitures = { \\
+        1: {"marque":"Ford", "modèle":"Mustang", "année":1964}, \\
+        2: {"marque":"DeLorean", "modèle":"DMC-12", "année":1981}}</pre></code></p>
+      <p>
+        Pour accéder à un élément on utilise encore la notation avec crochet :
+        <pre><code>>>> mes_voitures[1]
+{"marque":"Ford", "modèle":"Mustang", "année":1964}
+>>>  mes_voitures[2]
+{"marque":" DeLorean", "modèle":"DMC-12", "année":1981}
+>>> mes_voitures[2]["marque"]
+DeLorean</pre></code></p>
+      <p>
+        Pour parcourir les éléments, on utilise les méthodes <code>keys()</code>, <code>values()</code> et <code>items</code> :
+        <pre><code>>>> for k in mes_voitures.keys():
+...     print(mes_voitures[k]["marque"], mes_voitures[k]["modèle"])
+Ford Mustang
+DoLorean DMC-12
+    </div>
   </div>
 </body>
